@@ -121,7 +121,7 @@ body {
 /* Responsive */
 @media (max-width: 1024px) {
     .video-container {
-        width: 90%;
+        width: 100%;
         height: auto;
         aspect-ratio: 16 / 9; /* Mantiene proporción del video */
     }
@@ -167,5 +167,6 @@ body {
 
     .video-container {
         height: auto;
+        width: auto;
     }
 }
