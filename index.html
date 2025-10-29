@@ -7,28 +7,37 @@
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-
-    <section class="fondo1">
-        <video autoplay muted loop playsinline>
-            <source src="videos/corte.mp4" type="video/mp4">
-        </video>
-        <div class="header">
-            <nav class="nav-header">
-                <div class="navbar-content">
-                    <div class="logo">
-                        Mi sitio
-                    </div>
-                    <div class="menu">
-                        <a href="#">Inicio</a>
-                        <a href="#">Servicios</a>
-                        <a href="#">contacto</a>
-                    </div>
+<section class="fondo1">
+    <video autoplay muted loop playsinline>
+        <source src="videos/corte.mp4" type="video/mp4">
+    </video>
+    <div class="header">
+        <nav class="nav-header">
+            <div class="navbar-content">
+                <div class="logo">
+                    Mi sitio
                 </div>
-            </nav>
-        </div>  
+                <!-- Checkbox para menú móvil -->
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger">&#9776;</label>
 
-    </section>
-    
+                <div class="menu">
+                    <a href="#">Inicio</a>
+                    <div class="submenu">
+                        <a href="#">Servicios ▾</a>
+                        <div class="submenu-items">
+                            <a href="#">Diseño Web</a>
+                            <a href="#">Marketing</a>
+                            <a href="#">SEO</a>
+                        </div>
+                    </div>
+                    <a href="#">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </div>  
+</section>
+
 
 </body>
 </html>

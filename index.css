@@ -10,63 +10,91 @@ body {
 }
 
 
-/*navegador del header*/
+/* Header y navbar */
 .nav-header {
     position: fixed;
     width: 100%;
     height: 80px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
+    z-index: 10;
 }
-/*cuadros de texto del nav*/
-.nav-content {
-    position: relative;
-    z-index: 1;
+
+.navbar-content {
+    width: 90%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    max-width: 1200px;
+    position: relative;
+    z-index: 10;
 }
 
-/*Texto del menu*/
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Menu */
 .menu {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
+
 .menu a {
     color: white;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
-.menu a:hover{
+
+.menu a:hover {
     color: #00bcd4;
 }
 
-/*Logo*/
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-/*menu responsivo*/
-@media (max-width: 768px) {
-    nav {
-        height: 60px;
-    }
-    .menu {
-        gap: 10px;
-    }
-    .logo {
-        font-size: 1.2rem;
-    }
+/* Submenu */
+.submenu {
+    position: relative;
 }
 
-/*fondo de video*/
+.submenu-items {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #333;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.submenu-items a {
+    padding: 10px;
+    color: white;
+}
+
+.submenu:hover .submenu-items {
+    display: flex;
+}
+
+/* Hamburguesa para móvil */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Checkbox para controlar el menú móvil */
+#menu-toggle {
+    display: none;
+}
+
+/* Fondo de video */
 .fondo1 video {
     position: absolute;
     top: 50%;
@@ -76,7 +104,40 @@ body {
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    object-fit: contain;
+    object-fit: cover;
     z-index: 0;
-    /*opacity: 0.20;*/ 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    .menu a, .submenu-items a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    #menu-toggle:checked + .hamburger + .menu {
+        display: flex;
+    }
+
+    .submenu-items {
+        position: static;
+    }
+
+    .submenu:hover .submenu-items {
+        display: none; /* Deshabilitamos hover en móvil */
+    }
 }
