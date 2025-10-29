@@ -170,3 +170,78 @@ body {
         width: auto;
     }
 }
+
+
+
+
+/* Sección parallax */
+.parallax {
+  position: relative;
+  background-attachment: fixed; /* Clave del efecto */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fondos diferentes */
+#parallax-1 {
+  background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80");
+}
+
+#parallax-2 {
+  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80");
+}
+
+/* Capa oscura sobre el fondo */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.overlay h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+/* Contenido normal */
+.content {
+  padding: 5rem 2rem;
+  background-color: #222;
+  text-align: center;
+}
+
+.content h2 {
+  color: #ffcc00;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  text-align: center;
+  background-color: #000;
+}
+
+/* 📱 Responsividad para móviles */
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll; /* Evita problemas en móviles */
+  }
+  .overlay h1 {
+    font-size: 1.8rem;
+  }
+  .content {
+    padding: 3rem 1.5rem;
+  }
+}
