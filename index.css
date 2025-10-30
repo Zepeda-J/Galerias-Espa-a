@@ -188,7 +188,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -245,6 +245,7 @@ footer {
 @media (max-width: 768px) {
   .parallax {
     background-attachment: scroll; /* Evita problemas en móviles */
+    height: 40vh;
   }
   .overlay h1 {
     font-size: 1.8rem;
