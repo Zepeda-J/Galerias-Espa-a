@@ -196,11 +196,11 @@ body {
 
 /* Fondos diferentes */
 #parallax-1 {
-  background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80");
+  background-image: url("fondos/familia-sentada-junto-al-arbol.jpg");
 }
 
 #parallax-2 {
-  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80");
+  background-image: url("fondos/altar-para-la-celebracion-del-dia-de-los-muertos.jpg");
 }
 
 /* Capa oscura sobre el fondo */
@@ -214,6 +214,7 @@ body {
 .overlay h1 {
   font-size: 2.5rem;
   font-weight: 600;
+  color: white;
 }
 
 /* Contenido normal */
