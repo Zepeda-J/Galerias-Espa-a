@@ -45,6 +45,9 @@ body {
     justify-content: center;
     color: #fff;
     z-index: 10;
+    background: #DAC195;
+    background: linear-gradient(180deg, rgba(218, 193, 149, 1) 0%, rgba(133, 104, 29, 0.53) 100%);
+
 }
 
 .navbar-content {
@@ -57,10 +60,13 @@ body {
 }
 
 /* Logo */
-.logo {
-    font-size: 1.5rem;
+.logo img{
+    /*font-size: 1.5rem;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 1px;*/
+    border-radius: 60%;
+    width: 100px;
+    height: 100px;
 }
 
 /* Menu */
@@ -161,8 +167,9 @@ body {
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 1.2rem;
+    .logo img{
+        width: 80px;
+        height: 80px;
     }
 
     .video-container {
