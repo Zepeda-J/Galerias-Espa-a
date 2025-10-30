@@ -220,7 +220,7 @@ body {
 /* Contenido normal */
 .content {
   padding: 5rem 2rem;
-  background-color: #222;
+  background-color: white;
   text-align: center;
 }
 
@@ -230,9 +230,85 @@ body {
 }
 
 .content p {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
   max-width: 700px;
   margin: 0 auto;
 }
+
+/*productos*/
+h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: #333;
+    }
+
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .producto {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .producto h3 {
+      color: #444;
+      margin: 10px 0 5px;
+    }
+
+    .producto p {
+      color: #777;
+      font-size: 14px;
+      margin: 0 0 10px;
+    }
+
+    .precio {
+      color: #e67e22;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .btn {
+      background-color: #e67e22;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #cf711f;
+    }
+
+
+
+
+
+
+
 
 /* Footer */
 footer {
@@ -245,7 +321,7 @@ footer {
 @media (max-width: 768px) {
   .parallax {
     background-attachment: scroll; /* Evita problemas en móviles */
-    height: 40vh;
+    height: 40vh; /*vista en el celular*/
   }
   .overlay h1 {
     font-size: 1.8rem;
