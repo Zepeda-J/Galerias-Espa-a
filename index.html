@@ -74,34 +74,44 @@
   </section>
 
   <section class="content">
-    <h1>Nuestros Productos</h1>
+ <header>
+    <h1>Tienda Artesanal MDF</h1>
+  </header>
 
-    <div class="productos">
-      <div class="producto">
-        <img src="navidad/coronas/corona1.svg" alt="Producto 1">
-        <h3>Portarretrato MDF</h3>
-        <p>Diseño personalizado en corte láser.</p>
-        <span class="precio">$350</span><br>
-        <button class="btn">Agregar al carrito</button>
-      </div>
-
-      <div class="producto">
-        <img src="producto2.jpg" alt="Producto 2">
-        <h3>Letrero decorativo</h3>
-        <p>Hecho a medida con nombres o frases.</p>
-        <span class="precio">$420</span><br>
-        <button class="btn">Agregar al carrito</button>
-      </div>
-
-      <div class="producto">
-        <img src="producto3.jpg" alt="Producto 3">
-        <h3>Caja personalizada</h3>
-        <p>Ideal para regalos especiales.</p>
-        <span class="precio">$290</span><br>
-        <button class="btn">Agregar al carrito</button>
-      </div>
+  <div class="productos">
+    <div class="producto" data-nombre="Portarretrato MDF" data-precio="350">
+      <img src="producto1.jpg" alt="Producto 1">
+      <h3>Portarretrato MDF</h3>
+      <p>Diseño personalizado en corte láser.</p>
+      <span class="precio">$350</span><br>
+      <button class="btn agregar">Agregar al carrito</button>
     </div>
+
+    <div class="producto" data-nombre="Letrero decorativo" data-precio="420">
+      <img src="producto2.jpg" alt="Producto 2">
+      <h3>Letrero decorativo</h3>
+      <p>Hecho a medida con nombres o frases.</p>
+      <span class="precio">$420</span><br>
+      <button class="btn agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-nombre="Caja personalizada" data-precio="290">
+      <img src="producto3.jpg" alt="Producto 3">
+      <h3>Caja personalizada</h3>
+      <p>Ideal para regalos especiales.</p>
+      <span class="precio">$290</span><br>
+      <button class="btn agregar">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="carrito">
+    <h2>🛒 Tu carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total">Total: $0</p>
+  </div>
   </section>
+
+
 
   <section class="parallax" id="parallax-2">
     <div class="overlay">
@@ -115,5 +125,49 @@
 
 </body>
 
-<script src="script.js" defer> </script>
+<script> 
+    const listaCarrito = document.getElementById('lista-carrito');
+    const totalElemento = document.getElementById('total');
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // 🔹 Función para actualizar la vista del carrito
+    function actualizarCarrito() {
+      listaCarrito.innerHTML = '';
+      let total = 0;
+
+      carrito.forEach((producto, index) => {
+        const item = document.createElement('li');
+        item.innerHTML = `
+          ${producto.nombre} - $${producto.precio}
+          <button onclick="eliminarProducto(${index})">🗑️</button>
+        `;
+        listaCarrito.appendChild(item);
+        total += producto.precio;
+      });
+
+      totalElemento.textContent = `Total: $${total}`;
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    // 🔹 Agregar producto
+    document.querySelectorAll('.agregar').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const producto = boton.closest('.producto');
+        const nombre = producto.dataset.nombre;
+        const precio = parseFloat(producto.dataset.precio);
+
+        carrito.push({ nombre, precio });
+        actualizarCarrito();
+      });
+    });
+
+    // 🔹 Eliminar producto
+    function eliminarProducto(index) {
+      carrito.splice(index, 1);
+      actualizarCarrito();
+    }
+
+    // 🔹 Cargar carrito al iniciar
+    actualizarCarrito();
+  </script>
 </html>
