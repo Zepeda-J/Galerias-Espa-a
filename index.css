@@ -45,9 +45,8 @@ body {
     justify-content: center;
     color: #fff;
     z-index: 10;
-    background: #DAC195;
-    background: linear-gradient(180deg, rgba(218, 193, 149, 1) 0%, rgba(133, 104, 29, 0.53) 100%);
-
+    background: #4E4F50;
+    background: linear-gradient(180deg, rgba(78, 79, 80, 1) 0%, rgba(78, 79, 80, 0.71) 50%);
 }
 
 .navbar-content {
@@ -65,8 +64,8 @@ body {
     font-weight: bold;
     letter-spacing: 1px;*/
     border-radius: 60%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 /* Menu */
