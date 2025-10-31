@@ -202,6 +202,10 @@ body {
   background-image: url("fondos/altar-para-la-celebracion-del-dia-de-los-muertos.jpg");
 }
 
+#parallax-3 {
+  background-image: url("fondos/San-valentin.jpg");
+}
+
 /* Capa oscura sobre el fondo */
 .overlay {
   background-color: rgba(0, 0, 0, 0.5);

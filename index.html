@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerias | Ciudad de México</title>
+    <title>Galerias YAS | Ciudad de México</title>
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 
@@ -49,7 +49,7 @@
 <section class="content">
     <h2>Nosotros</h2>
     <p>
-      En Galerias España, somos apasionados por la precisión, la creatividad y el diseño. 
+      En Galerias YAS, somos apasionados por la precisión, la creatividad y el diseño. 
       Nos especializamos en cortes y grabados láser en MDF y otros materiales, ofreciendo soluciones personalizadas 
       para proyectos de decoración, arquitectura, diseño industrial y emprendimientos creativos.
       <br>
@@ -59,7 +59,7 @@
       transformar tus ideas en productos únicos, combinando innovación, diseño y calidad artesanal.
       Desde piezas decorativas y maquetas arquitectónicas hasta rótulos y souvenirs, acompañamos a cada 
       cliente en todo el proceso: desde el diseño hasta la entrega final, asegurando un servicio rápido, confiable y a medida.
-      En Galerias España, creemos que cada corte cuenta. Por eso, cuidamos cada detalle para 
+      En Galerias YAS, creemos que cada corte cuenta. Por eso, cuidamos cada detalle para 
       que el resultado sea exactamente lo que imaginabas — o incluso mejor.
     </p>
 </section>
@@ -119,11 +119,60 @@
     </div>
   </section>
 
+  <section class="content">
+    <div class="productos">
+    <div class="producto" data-nombre="Portarretrato MDF" data-precio="350">
+      <img src="producto1.jpg" alt="Producto 1">
+      <h3>Portarretrato MDF</h3>
+      <p>Diseño personalizado en corte láser.</p>
+      <span class="precio">$350</span><br>
+      <button class="btn agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-nombre="Letrero decorativo" data-precio="420">
+      <img src="producto2.jpg" alt="Producto 2">
+      <h3>Letrero decorativo</h3>
+      <p>Hecho a medida con nombres o frases.</p>
+      <span class="precio">$420</span><br>
+      <button class="btn agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto" data-nombre="Caja personalizada" data-precio="290">
+      <img src="producto3.jpg" alt="Producto 3">
+      <h3>Caja personalizada</h3>
+      <p>Ideal para regalos especiales.</p>
+      <span class="precio">$290</span><br>
+      <button class="btn agregar">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <div id="carrito">
+    <h2>🛒 Tu carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total">Total: $0</p>
+  </div>
+  </section>
+
+ <section class="parallax" id="parallax-3">
+    <div class="overlay">
+      <h1>14 de Febrero</h1>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
   <footer>
     <p>© 2025 Tu Sitio Web</p>
   </footer>
 
 </body>
+
+
 
 <script> 
     const listaCarrito = document.getElementById('lista-carrito');
