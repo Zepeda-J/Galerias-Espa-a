@@ -108,6 +108,8 @@
     <h2>🛒 Tu carrito</h2>
     <ul id="lista-carrito"></ul>
     <p id="total">Total: $0</p>
+    <button id="enviar-whatsapp" class="btn">📲 Enviar pedido por WhatsApp</button>
+
   </div>
   </section>
 
@@ -150,6 +152,8 @@
     <h2>🛒 Tu carrito</h2>
     <ul id="lista-carrito"></ul>
     <p id="total">Total: $0</p>
+    <button id="enviar-whatsapp" class="btn">📲 Enviar pedido por WhatsApp</button>
+
   </div>
   </section>
 
@@ -218,5 +222,32 @@
 
     // 🔹 Cargar carrito al iniciar
     actualizarCarrito();
+
+
+
+
+    
+    // 🔹 Enviar pedido por WhatsApp
+document.getElementById('enviar-whatsapp').addEventListener('click', () => {
+  if (carrito.length === 0) {
+    alert('Tu carrito está vacío 😅');
+    return;
+  }
+
+  const telefono = "5215512345678"; // ← Cambia por tu número en formato internacional (sin +)
+  let mensaje = "🧾 *Nuevo pedido desde Galerías YAS*%0A%0A";
+
+  carrito.forEach((producto, i) => {
+    mensaje += `${i + 1}. ${producto.nombre} - $${producto.precio}%0A`;
+  });
+
+  const total = carrito.reduce((acc, p) => acc + p.precio, 0);
+  mensaje += `%0A💰 *Total:* $${total}%0A`;
+  mensaje += `%0A📍 *Por favor escribe tu nombre y dirección para continuar con el pedido.*`;
+
+  const url = `https://wa.me/${telefono}?text=${mensaje}`;
+  window.open(url, "_blank");
+});
+
   </script>
 </html>
